@@ -208,6 +208,11 @@ export const OuterKey = styled.div<{
   margin-right: 2px;
   width: 100%;
   cursor: pointer;
+  animation-name: rgb-glow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 `;
 
 export const getDarkenedColor = (color: string) => {
@@ -277,7 +282,9 @@ export const KeyBG = memo(
               />
             </>
           ) : null}
-          <OuterKey style={{backgroundColor: backColor}}></OuterKey>
+          <OuterKey
+            style={{backgroundColor: backColor, color: backColor}}
+          ></OuterKey>
         </BGKeyContainer>
       </RotationContainer>
     );
@@ -319,6 +326,7 @@ const KeyComponent = memo(
     const containerOnClick: MouseEventHandler = (evt) => {
       evt.stopPropagation();
       onClick(id);
+      console.log(id);
     };
     c = getRandomColor();
     const hasSecondKey = [h2, w2].every((i) => i !== undefined);
@@ -360,7 +368,10 @@ const KeyComponent = memo(
           ) : null}
           <OuterKey
             selected={selected}
-            style={{backgroundColor: getDarkenedColor(c)}}
+            style={{
+              backgroundColor: getDarkenedColor(c),
+              color: '#aaaaaa',
+            }}
           >
             <ChosenInnerKey
               style={{
