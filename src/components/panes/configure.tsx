@@ -251,7 +251,8 @@ const ConfigureGrid = () => {
       <FlexCell
         ref={flexRef}
         onClick={(evt) => {
-          if (evt.target.nodeName !== 'CANVAS') dispatch(clearSelectedKey());
+          if ((evt.target as any).nodeName !== 'CANVAS')
+            dispatch(clearSelectedKey());
         }}
       >
         <PositionedKeyboard

@@ -17,7 +17,7 @@
     "@microsoft/applicationinsights-web": "^2.8.6",
     "@react-spring/three": "^9.5.5",
     "@react-three/drei": "^9.40.0",
-    "@react-three/fiber": "^8.9.0",
+    "@react-three/fiber": "^8.9.1",
     "@reduxjs/toolkit": "^1.6.1",
     "@types/lodash.partition": "^4.6.6",
     "@types/raf-schd": "^4.0.1",
