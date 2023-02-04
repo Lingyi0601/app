@@ -1,5 +1,6 @@
 import {ConfigurePane} from '../components/panes/configure';
 import {Debug} from '../components/panes/debug';
+import {About} from '../components/panes/about';
 import {DesignTab} from '../components/panes/design';
 import {Settings} from '../components/panes/settings';
 import {Test} from '../components/panes/test';
@@ -28,6 +29,12 @@ export default [
     component: Settings,
     path: '/settings',
     title: 'Settings',
+  },
+  {
+    key: 'about',
+    component: About,
+    path: '/about',
+    title: 'Supported',
   },
   {
     key: 'debug',

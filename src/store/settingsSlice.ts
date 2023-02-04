@@ -42,6 +42,9 @@ export const settingsSlice = createSlice({
     toggleCreatorMode: (state) => {
       toggleBool(state, 'showDesignTab');
     },
+    toggleAboutMode: (state) => {
+      toggleBool(state, 'showAboutTab');
+    },
     setTestMatrixEnabled: (state, action: PayloadAction<boolean>) => {
       state.isTestMatrixEnabled = action.payload;
     },
@@ -62,6 +65,7 @@ export const {
   toggleFastRemap,
   toggleHardwareAcceleration,
   toggleCreatorMode,
+  toggleAboutMode,
   setTestMatrixEnabled,
   requireRestart,
   disableGlobalHotKeys,
@@ -84,3 +88,6 @@ export const getRestartRequired = (state: RootState) =>
   state.settings.restartRequired;
 export const getIsTestMatrixEnabled = (state: RootState) =>
   state.settings.isTestMatrixEnabled;
+// 添加About标题
+export const getShowAboutTab = (state: RootState) =>
+  state.settings.showAboutTab;

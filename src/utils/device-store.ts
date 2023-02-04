@@ -28,6 +28,7 @@ const defaultStoreData = {
   settings: {
     allowKeyboardKeyRemapping: false,
     showDesignTab: false,
+    showAboutTab: false,
     disableFastRemap: false,
     disableHardwareAcceleration: false,
   },

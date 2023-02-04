@@ -9,10 +9,12 @@ import {useAppSelector} from 'src/store/hooks';
 import {
   getAllowKeyboardKeyRemapping,
   getShowDesignTab,
+  getShowAboutTab,
   getDisableFastRemap,
   getDisableHardwareAcceleration,
   getRestartRequired,
   toggleCreatorMode,
+  toggleAboutMode,
   toggleFastRemap,
   toggleHardwareAcceleration,
   requireRestart,
@@ -40,6 +42,7 @@ const DebugPane = styled(Pane)`
 export const Settings = () => {
   const dispatch = useDispatch();
   const showDesignTab = useAppSelector(getShowDesignTab);
+  const showAboutTab = useAppSelector(getShowAboutTab);
   const disableFastRemap = useAppSelector(getDisableFastRemap);
 
   return (
@@ -52,6 +55,15 @@ export const Settings = () => {
               <AccentSlider
                 onChange={() => dispatch(toggleCreatorMode())}
                 isChecked={showDesignTab}
+              />
+            </Detail>
+          </ControlRow>
+          <ControlRow>
+            <Label>Show Supported tab</Label>
+            <Detail>
+              <AccentSlider
+                onChange={() => dispatch(toggleAboutMode())}
+                isChecked={showAboutTab}
               />
             </Detail>
           </ControlRow>

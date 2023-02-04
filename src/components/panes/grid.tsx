@@ -112,6 +112,7 @@ export const Row = styled.div<{selected: boolean}>`
         ? getIconColor(props.selected).style.color
         : 'var(--color_dark-grey)'};
   }
+  
 `;
 
 export const SubmenuRow = styled(Row)`

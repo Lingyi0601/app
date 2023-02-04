@@ -69,6 +69,7 @@ export type Key = Pick<
 export type Settings = {
   allowKeyboardKeyRemapping: boolean;
   showDesignTab: boolean;
+  showAboutTab: boolean;
   disableFastRemap: boolean;
   disableHardwareAcceleration: boolean;
 };

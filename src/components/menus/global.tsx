@@ -4,7 +4,9 @@ import {useLocation} from 'react-router';
 import {Link} from 'react-router-dom';
 import PANES from '../../utils/pane-config';
 import {useAppSelector} from 'src/store/hooks';
-import {getShowDesignTab} from 'src/store/settingsSlice';
+import {
+  getShowDesignTab,
+  getShowAboutTab} from 'src/store/settingsSlice';
 
 const Container = styled.div`
   width: 100vw;
@@ -39,6 +41,7 @@ const showDebugPane = NODE_ENV === 'development' || DEBUG_PROD === 'true';
 
 export const UnconnectedGlobalMenu = () => {
   const showDesignTab = useAppSelector(getShowDesignTab);
+  const showAboutTab = useAppSelector(getShowAboutTab);
 
   const location = useLocation();
 
@@ -46,6 +49,7 @@ export const UnconnectedGlobalMenu = () => {
     return PANES.map((pane) => {
       if (pane.key === 'design' && !showDesignTab) return null;
       if (pane.key === 'debug' && !showDebugPane) return null;
+      if (pane.key === 'about' && !showAboutTab) return null;
       return (
         <Link key={pane.key} to={pane.path}>
           <MenuItem selected={pane.path === location.pathname}>
@@ -54,7 +58,7 @@ export const UnconnectedGlobalMenu = () => {
         </Link>
       );
     });
-  }, [location, showDesignTab]);
+  }, [location, showDesignTab,showAboutTab]);
 
   return (
     <React.Fragment>
